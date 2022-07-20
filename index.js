@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 
 const app = express();
 app.use(bodyParser.json());
-const port = 8080;
+const port = 80;
 
 app.post('/kueskypay', (req, res) => {
     console.log(req.body);
