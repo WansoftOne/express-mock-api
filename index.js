@@ -8,7 +8,14 @@ const port = process.env.PORT || 3000;
 app.post('/kueskypay', (req, res) => {
     console.log(req.body);
     res.send({
-        data: "JEJE"
+        data: "POST RESPONSE"
+    })
+});
+
+app.get('/kueskypay', (req, res) => {
+    console.log(req.body);
+    res.send({
+        data: "GET RESPONSE"
     })
 });
 
