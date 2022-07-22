@@ -9,6 +9,7 @@ var API_RESPONSE = 'accept';
 
 app.post('/kueskypay', (req, res) => {
     console.log(req.body)
+    res.set('Authorization','Bearer 8a682242-3707-43c6-bc34-a784cf9af735')
     res.send({
         "status": API_RESPONSE
     })
