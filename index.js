@@ -5,10 +5,11 @@ const app = express();
 app.use(bodyParser.json());
 const port = process.env.PORT || 3000;
 
+var API_RESPONSE = 'accept';
+
 app.post('/kueskypay', (req, res) => {
-    console.log(req.body);
     res.send({
-        data: "POST RESPONSE"
+        "status": API_RESPONSE
     })
 });
 
@@ -17,6 +18,15 @@ app.get('/kueskypay', (req, res) => {
     res.send({
         data: "GET RESPONSE"
     })
+});
+
+app.get('/api-response', (req, res) => {
+    res.send(API_RESPONSE);
+});
+
+app.post('/api-response', (req, res) => {
+    API_RESPONSE = req.body.value;
+    res.send("SUCCESS")
 });
 
 app.listen(port, () => {
