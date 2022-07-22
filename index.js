@@ -8,6 +8,7 @@ const port = process.env.PORT || 3000;
 var API_RESPONSE = 'accept';
 
 app.post('/kueskypay', (req, res) => {
+    console.log(req.body)
     res.send({
         "status": API_RESPONSE
     })
