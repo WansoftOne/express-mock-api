@@ -13,12 +13,15 @@ var OPTIONS = {
 
 app.post('/kueskypay', (req, res) => {
     console.log(req.body)
+    
     if(OPTIONS.withToken) {
         res.setHeader('Authorization',`Bearer ${TOKEN}`)
     }
-    return res.json({
+    res.set('Content-Type', 'application/json');
+    const data = {
         "status": OPTIONS.response
-    })
+    }
+    return res.json(data)
 });
 
 app.get('/kueskypay', (req, res) => {
