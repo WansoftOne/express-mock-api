@@ -16,7 +16,7 @@ app.post('/kueskypay', (req, res) => {
     if(OPTIONS.withToken) {
         res.setHeader('Authorization',`Bearer ${TOKEN}`)
     }
-    res.json({
+    return res.json({
         "status": OPTIONS.response
     })
 });
