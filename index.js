@@ -5,7 +5,8 @@ const app = express();
 app.use(bodyParser.json());
 const port = process.env.PORT || 3000;
 
-const TOKEN = '8a682242-3707-43c6-bc34-a784cf9af735';
+const API_SECRET= 'ec3c1eb4-e22c-4e86-af87-feac42a78113';
+
 var OPTIONS = {
     response: 'Accept',
     withToken: true,
@@ -15,7 +16,7 @@ app.post('/kueskypay', (req, res) => {
     console.log(req.body)
     
     if(OPTIONS.withToken) {
-        res.setHeader('Authorization',`Bearer ${TOKEN}`)
+        res.setHeader('Authorization',`Bearer ${API_SECRET}`)
     }
     res.set('Content-Type', 'application/json');
     const data = {
