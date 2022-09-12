@@ -51,8 +51,8 @@ app.post('/options', (req, res) => {
 });
 
 app.get('/jwt', (req, res) => {
-    const iat = Date.now();
-    const exp = Date.now() + 300000;
+    const iat = Date.now() / 1000;
+    const exp = iat + 300;
     
     const jti = sha256(`${API_SECRET}:${iat}`);
     
